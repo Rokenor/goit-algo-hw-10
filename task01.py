@@ -8,8 +8,13 @@ def find_coins_greedy(amount):
 
     for coin in coins:
         if amount >= coin:
+            # Скільки монет можна взяти, не перевищивши залишок
             count = amount // coin
+
+            # Додаємо номінал монети та її кількість до нашого словника результатів
             result[coin] = count
+
+             # Зменшуємо загальний залишок суми на вартість щойно виданих монет
             amount -= coin * count
 
     return result
